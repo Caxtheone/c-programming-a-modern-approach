@@ -21,7 +21,7 @@ bool test_extension(const char *file_name, const char *extension)
         return false;
 
     while (*file_name)
-        if (!toupper(*file_name++) == toupper(*extension++))
+        if (toupper(*file_name++) != toupper(*extension++))
             return false;
     return true;
 }
